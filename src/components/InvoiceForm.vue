@@ -71,21 +71,21 @@
             }
         },
 		methods: {
-			addLine() {
-				this.invoice.lines.push({
-					designation: "",
-					price: null,
-					quantity: null,
-				});
-			},
+            addLine() {
+			this.invoiceStore.invoice.lines.push({
+				designation: "",
+				price: null,
+				quantity: null,
+			});
+		},
 			showClientForm() {
 				this.displayClientForm = true;
 			},
 			hideClientForm(newClient) {
 				this.displayClientForm = false;
-				this.invoice.client.firstname = newClient.firstname;
-				this.invoice.client.lastname = newClient.lastname;
-				this.invoice.client.phoneNumber = newClient.phoneNumber;
+                this.invoiceStore.invoice.client.firstname = newClient.firstname;
+				this.invoiceStore.invoice.client.lastname = newClient.lastname;
+				this.invoiceStore.invoice.client.phoneNumber = newClient.phoneNumber;
 			},
 			handleEditLine(index) {
 				this.displayLineForm.splice(index, 1, true);
